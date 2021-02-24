@@ -1,6 +1,4 @@
-
 import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,9 +18,17 @@ class OnBoardingScreenState extends State<OnBoardingScreen>{
   PageController carouselController = PageController(initialPage: 0);
 
   void nextButtonPressed(){
-    setState(() {
-      carouselController.jumpToPage(++currentCarouselIndex);
-    });
+    if(currentCarouselIndex == totalCarouselLength-1){
+      skipPressed();
+    }else{
+      setState(() {
+        carouselController.jumpToPage(++currentCarouselIndex);
+      });
+    }
+  }
+
+  void skipPressed(){
+    Navigator.of(context).popAndPushNamed("loginp1");
   }
 
   @override
@@ -50,16 +56,15 @@ class OnBoardingScreenState extends State<OnBoardingScreen>{
                   child: Container(
                     child: Column(
                       children: [
-                        SlideCarousel(),
+                        slideCarousel(),
                         SizedBox(height: 10,),
-                        HorizontalIndicators(totalCarouselLength, currentCarouselIndex),
+                        horizontalIndicators(totalCarouselLength, currentCarouselIndex),
                       ],
                     ),
                   )
               ),
               SizedBox(height: 20,),
-              currentCarouselIndex == totalCarouselLength - 1 ? SizedBox()
-              : ButtonTheme(
+              ButtonTheme(
                 minWidth: double.infinity,
                 child: RaisedButton(
                   color: ThemeStyle.primaryColor,
@@ -77,7 +82,7 @@ class OnBoardingScreenState extends State<OnBoardingScreen>{
                 minWidth: double.infinity,
                 child: MaterialButton(
                   color: ThemeStyle.secondaryColor,
-                  onPressed: (){},
+                  onPressed: () => skipPressed(),
                   elevation: 0,
                   padding: EdgeInsets.all(15),
                   shape: RoundedRectangleBorder(
@@ -95,7 +100,7 @@ class OnBoardingScreenState extends State<OnBoardingScreen>{
     );
   }
 
-  Widget SlideCarousel(){
+  Widget slideCarousel(){
     var slideTitles = [
       "Stay Hydrated",
       "Subscribe Once",
@@ -148,7 +153,7 @@ class OnBoardingScreenState extends State<OnBoardingScreen>{
     );
   }
 
-  Widget HorizontalIndicators(count, selectedIndex){
+  Widget horizontalIndicators(count, selectedIndex){
     var dots = List<Widget>();
     for(int i = 0; i < count; i++){
       dots.add(Container(

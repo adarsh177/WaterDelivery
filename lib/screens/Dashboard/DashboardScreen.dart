@@ -5,20 +5,14 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class SplashScreen extends StatefulWidget{
+class DashboardScreen extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-    return SplashScreenState();
+    return DashboardScreenState();
   }
 }
 
-class SplashScreenState extends State<SplashScreen>{
-
-  @override
-  void initState() {
-    super.initState();
-    moveForward();
-  }
+class DashboardScreenState extends State<DashboardScreen>{
 
   @override
   Widget build(BuildContext context) {
@@ -29,19 +23,7 @@ class SplashScreenState extends State<SplashScreen>{
       color: ThemeStyle.primaryColor,
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      child: Image(
-        fit: BoxFit.contain,
-        width: 0.3.sw,
-        height: 0.3.sw,
-        image: AssetImage("assets/logo.png"),
-      ),
+      child: Text('DASHBOARD', style: TextStyle(fontSize: 46, color: Colors.white),),
     );
-  }
-
-  void moveForward(){
-    //TODO:: CHECK LOGIN STATUS AND DECIDE NEXT SCREEN
-    Future.delayed(const Duration(seconds: 3), (){
-      Navigator.of(context).popAndPushNamed("onboarding");
-    });
   }
 }
