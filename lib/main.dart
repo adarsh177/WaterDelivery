@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water_delivery/screens/Dashboard/DashboardScreen.dart';
+import 'package:water_delivery/screens/Location/LocationMainScreen.dart';
 import 'file:///D:/Project/WaterDelivery/water_delivery/lib/screens/LoginScreen/LoginScreen_P1.dart';
 import 'file:///D:/Project/WaterDelivery/water_delivery/lib/screens/LoginScreen/LoginScreen_P2.dart';
 import 'package:water_delivery/screens/OTPVerifyScreen.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         "loginp2": (context) => LoginScreenP2(),
         "otpverify": (context) => OTPVerifyScreen(),
         "dashboard": (context) => DashboardScreen(),
+        "location": (context) => LocationMainScreen(),
       },
       initialRoute: "/",
     );

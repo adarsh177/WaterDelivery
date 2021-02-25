@@ -23,7 +23,12 @@ class DashboardScreenState extends State<DashboardScreen>{
       color: ThemeStyle.primaryColor,
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      child: Text('DASHBOARD', style: TextStyle(fontSize: 46, color: Colors.white),),
+      child: Material(
+        child: InkWell(
+          child: Text('DASHBOARD', style: TextStyle(fontSize: 46, color: Colors.white),),
+          onTap: (){Navigator.of(context).pushNamed("location");},
+        ),
+      ),
     );
   }
 }
