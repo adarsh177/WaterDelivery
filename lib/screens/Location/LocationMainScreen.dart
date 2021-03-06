@@ -49,7 +49,12 @@ class LocationMainScreenState extends State<LocationMainScreen>{
                   Positioned(
                     right: 0,
                     child: InkWell(
-                      child: Text("x", style: TextStyle(fontSize: 22, fontWeight: FontWeight.normal),),
+                      child: Image(
+                        fit: BoxFit.contain,
+                        width: 0.025.sh,
+                        height: 0.025.sh,
+                        image: AssetImage("assets/ic_cross.png"),
+                      ),
                       onTap: () => closePressed(),
                     ),
                   )
