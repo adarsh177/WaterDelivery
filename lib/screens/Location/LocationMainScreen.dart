@@ -40,12 +40,9 @@ class LocationMainScreenState extends State<LocationMainScreen>{
             children: [
               Stack(
                 children: [
-                  Image(
-                    fit: BoxFit.contain,
+                  SizedBox(
                     width: double.infinity,
-                    height: 0.03.sh,
-                    image: AssetImage("assets/logo_colored.png"),
-                  ),
+                    height: 0.03.sh,),
                   Positioned(
                     right: 0,
                     child: InkWell(

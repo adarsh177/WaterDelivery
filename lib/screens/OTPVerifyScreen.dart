@@ -54,12 +54,8 @@ class OTPVerifyScreenState extends State<OTPVerifyScreen>{
             children: [
               Stack(
                 children: [
-                  Image(
-                    fit: BoxFit.contain,
-                    width: double.infinity,
-                    height: 0.03.sh,
-                    image: AssetImage("assets/logo_colored.png"),
-                  ),
+                  SizedBox(width: double.infinity,
+                    height: 0.03.sh,),
                   Positioned(
                     height: 0.03.sh,
                     right: 0,

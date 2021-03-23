@@ -45,13 +45,6 @@ class OnBoardingScreenState extends State<OnBoardingScreen>{
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Image(
-                fit: BoxFit.contain,
-                width: 0.05.sh,
-                height: 0.05.sh,
-                image: AssetImage("assets/logo_colored.png"),
-              ),
-              SizedBox(height: 40,),
               Expanded(
                   child: Container(
                     child: Column(
@@ -102,24 +95,24 @@ class OnBoardingScreenState extends State<OnBoardingScreen>{
 
   Widget slideCarousel(){
     var slideTitles = [
-      "Stay Hydrated",
-      "Subscribe Once",
-      "Express Delivery"
+      "Subscribe\nOnce",
+      "Stay\nHydrated",
+      "Hygenic\nDelivery",
     ];
     var slideTexts = [
-      "Now you don’t have to worry about running out of water. We will cover you.",
       "Subscribe once and we will get it delivered on time without any hassle.",
-      "Choose express delivery and we will get your order delivered within an hour",
+      "Now you don’t have to worry about running out of water. We will cover you.",
+      "We know the value of hygiene at any stage",
     ];
     var slideImages = [
       "assets/onboarding_slide_1.png",
-      "assets/onboarding_slide_1.png",
+      "assets/onboarding_slide_2.png",
       "assets/onboarding_slide_3.png"
     ];
 
 
     return Container(
-      height: 0.5.sh,
+      height: 0.6.sh,
       child: PageView.builder(
           controller: carouselController,
           itemCount: slideTitles.length,
@@ -135,16 +128,20 @@ class OnBoardingScreenState extends State<OnBoardingScreen>{
               children: [
                 Image(
                   fit: BoxFit.contain,
-                  width: 0.25.sh,
-                  height: 0.25.sh,
+                  width: 0.3.sh,
+                  height: 0.3.sh,
                   image: AssetImage(slideImages[index]),
                 ),
-                SizedBox(height: 10,),
-                Text(slideTitles[index], style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black87, fontSize: 30), textAlign: TextAlign.center),
-                SizedBox(height: 10,),
+                SizedBox(height: 5,),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  width: double.infinity,
+                  child: Text(slideTitles[index], style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black87, fontSize: 42), textAlign: TextAlign.start),
+                ),
+                SizedBox(height: 5,),
                 Container(
                   width: 0.8.sw,
-                  child: Text(slideTexts[index], style: TextStyle(fontWeight: FontWeight.normal, color: Colors.black87, fontSize: 16), textAlign: TextAlign.center,),
+                  child: Text(slideTexts[index], style: TextStyle(fontWeight: FontWeight.normal, color: Colors.black87, fontSize: 14), textAlign: TextAlign.start,),
                 ),
               ],
             );

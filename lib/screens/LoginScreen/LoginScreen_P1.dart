@@ -33,7 +33,7 @@ class LoginScreenP1State extends State<LoginScreenP1>{
             children: [
               Image(
                 fit: BoxFit.contain,
-                width: double.infinity,
+                width: 0,
                 height: 0.03.sh,
                 image: AssetImage("assets/logo_colored.png"),
               ),
