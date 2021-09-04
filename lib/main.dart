@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:water_delivery/screens/Dashboard/DashboardScreen.dart';
 import 'package:water_delivery/screens/Location/LocationMainScreen.dart';
-import 'file:///D:/Project/WaterDelivery/water_delivery/lib/screens/LoginScreen/LoginScreen_P1.dart';
-import 'file:///D:/Project/WaterDelivery/water_delivery/lib/screens/LoginScreen/LoginScreen_P2.dart';
+import 'package:water_delivery/screens/LoginScreen/LoginScreen_P1.dart';
+import 'package:water_delivery/screens/LoginScreen/LoginScreen_P2.dart';
 import 'package:water_delivery/screens/OTPVerifyScreen.dart';
 import 'package:water_delivery/screens/OnBoardingScreen.dart';
 import 'package:water_delivery/screens/SplashScreen.dart';
